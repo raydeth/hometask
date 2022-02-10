@@ -1,0 +1,24 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: hometask
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: com.github.raydeth.model.*
+        spring.json.value.default.type: com.github.raydeth.model.Event
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+jms:
+  event:
+    topic:
+      notification:
+        create: create-event-notification
+        update: update-event-notification
+        delete: delete-event-notification
+      request:
+        create: create-event-request
+        update: update-event-request
+        delete: delete-event-request

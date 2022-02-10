@@ -1,0 +1,13 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.openapi-generator
+logs
+target
+
+### Maven ###
+.mvn
+mvnw
+mvnw.cmd
