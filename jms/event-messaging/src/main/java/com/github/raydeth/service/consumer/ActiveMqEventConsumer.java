@@ -1,38 +1,38 @@
 package com.github.raydeth.service.consumer;
 
+
 import com.github.raydeth.model.Event;
 import com.github.raydeth.service.EventService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.boot.model.naming.Identifier;
 import org.springframework.context.annotation.Profile;
-import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("kafka")
+@Profile("activemq")
 @Slf4j
 @RequiredArgsConstructor
-public class KafkaEventConsumer implements EventConsumer {
+public class ActiveMqEventConsumer implements EventConsumer {
 
     private final EventService service;
 
     @Override
-    @KafkaListener(topics = {"create-event-request"}, containerFactory = "defaultEventRequestContainerFactory")
+    @JmsListener(destination = "create-event-request", containerFactory = "defaultListenerContainerFactory")
     public void createEvent(Event event) {
         log.info("Listened create event message: " + event.getEventId());
         service.createEvent(event);
     }
 
     @Override
-    @KafkaListener(topics = {"update-event-request"}, containerFactory = "defaultEventRequestContainerFactory")
+    @JmsListener(destination = "update-event-request", containerFactory = "defaultListenerContainerFactory")
     public void updateEvent(Event event) {
         log.info("Listened update event message: " + event.getEventId());
         service.updateEvent(event.getEventId(), event);
     }
 
     @Override
-    @KafkaListener(topics = {"delete-event-request"}, containerFactory = "deleteEventRequestContainerFactory")
+    @JmsListener(destination = "delete-event-request", containerFactory = "defaultListenerContainerFactory")
     public void deleteEvent(Long eventId) {
         log.info("Listened delete event message: " + eventId);
         service.deleteEvent(eventId);

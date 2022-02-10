@@ -1,23 +1,23 @@
 package com.github.raydeth.config;
 
 import com.github.raydeth.model.Event;
-import com.github.raydeth.model.LongIdentifier;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Configuration
-public class KafkaConsumerConfiguration {
+@Profile("kafka")
+public class KafkaConfiguration {
 
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
@@ -41,8 +41,8 @@ public class KafkaConsumerConfiguration {
     }
 
     @Bean
-    public ConsumerFactory<String, LongIdentifier> deleteEventRequestConsumerFactory() {
-        return new DefaultKafkaConsumerFactory<>(consumerProperties(), new StringDeserializer(), new JsonDeserializer<>(LongIdentifier.class));
+    public ConsumerFactory<String, Long> deleteEventRequestConsumerFactory() {
+        return new DefaultKafkaConsumerFactory<>(consumerProperties(), new StringDeserializer(), new JsonDeserializer<>(Long.class));
     }
 
     @Bean
@@ -53,8 +53,8 @@ public class KafkaConsumerConfiguration {
     }
 
     @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, LongIdentifier> deleteEventRequestContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String, LongIdentifier> containerFactory = new ConcurrentKafkaListenerContainerFactory<>();
+    public ConcurrentKafkaListenerContainerFactory<String, Long> deleteEventRequestContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, Long> containerFactory = new ConcurrentKafkaListenerContainerFactory<>();
         containerFactory.setConsumerFactory(deleteEventRequestConsumerFactory());
         return containerFactory;
     }

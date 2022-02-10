@@ -8,5 +8,5 @@ public interface EventConsumer {
 
     void updateEvent(Event event);
 
-    void deleteEvent(Identifier identifier);
+    void deleteEvent(Long identifier);
 }
