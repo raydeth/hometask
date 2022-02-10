@@ -1,0 +1,17 @@
+rabbit:
+  address:
+  user: guest
+  password: guest
+jms:
+  event:
+    topic:
+      notification:
+        name: event-notification
+        create: create-event-notification
+        update: update-event-notification
+        delete: delete-event-notification
+      request:
+        name: event-request
+        create: create-event-request
+        update: update-event-request
+        delete: delete-event-request
