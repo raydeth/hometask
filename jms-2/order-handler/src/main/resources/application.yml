@@ -1,0 +1,7 @@
+kafka:
+  bootstrap-servers: localhost:9092
+  consumer:
+    group-id: hometask
+file:
+  path: "/Users/Maxim_Sherstoboyev/Education/Senior/hometask/jms-2/order-handler/src/main/resources"
+  name: "Orders.txt"

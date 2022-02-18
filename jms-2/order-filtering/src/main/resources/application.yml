@@ -1,0 +1,27 @@
+kafka:
+  bootstrap-servers: localhost:9092
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  consumer:
+    group-id: hometask
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  topic:
+    order:
+      liquid:
+        name: liquid-orders
+      item:
+        name: item-orders
+    filter:
+      accepted:
+        name: accepted-orders
+      rejected:
+        name: rejected-orders
+json:
+  use:
+    type:
+      headers: false
+threshold:
+  total: 500
+  volume: 1000
