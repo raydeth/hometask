@@ -1,0 +1,5 @@
+Accepted: Order{userName='Opswat', type=ITEM, count=200, total=500}
+Accepted: Order{userName='123', type=LIQUID, volume=500, total=500}
+Rejected: Order{userName='123', type=ITEM, count=222, total=501}
+Rejected: Order{userName='123', type=LIQUID, volume=501, total=100}
+Rejected: Order{userName='123', type=LIQUID, volume=1, total=100}

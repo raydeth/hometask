@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:client-app;DB_CLOSE_DELAY=-1
+    username: 'sa'
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.UUIDSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.github.raydeth.kafka.model
+      group-id: client-app
+
+kafka:
+  topic:
+    product-category: product-category
+    product: product
+    order: order

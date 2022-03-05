@@ -1,0 +1,7 @@
+kafka:
+  topic:
+    product-category: product-category
+    product: product
+    order: order
+server:
+  port: 8081
