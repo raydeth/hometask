@@ -76,32 +76,32 @@ public class RabbitConfiguration {
 
     @Bean
     public Queue createEventRequestQueue() {
-        return new Queue(createRequestQueueName, true, false, false);
+        return new Queue(createRequestQueueName
     }
 
     @Bean
     public Queue updateEventRequestQueue() {
-        return new Queue(updateRequestQueueName, true, false, false);
+        return new Queue(updateRequestQueueName
     }
 
     @Bean
     public Queue deleteEventRequestQueue() {
-        return new Queue(deleteRequestQueueName, true, false, false);
+        return new Queue(deleteRequestQueueName
     }
 
     @Bean
     public Queue createNotificationEventQueue() {
-        return new Queue(createNotificationEventQueueName, true, false, false);
+        return new Queue(createNotificationEventQueueName
     }
 
     @Bean
     public Queue updateNotificationEventQueue() {
-        return new Queue(updateNotificationEventQueueName, true, false, false);
+        return new Queue(updateNotificationEventQueueName
     }
 
     @Bean
     public Queue deleteNotificationEventQueue() {
-        return new Queue(deleteNotificationEventQueueName, true, false, false);
+        return new Queue(deleteNotificationEventQueueName
     }
 
     @Bean
