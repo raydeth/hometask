@@ -1,0 +1,2 @@
+Accepted: Order(user=maax, type=LIQUID, volume=22, count=null, total=123)
+Rejected: Order(user=ilya, type=COUNTABLE, volume=null, count=100, total=501)

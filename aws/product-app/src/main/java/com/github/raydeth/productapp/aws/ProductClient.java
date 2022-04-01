@@ -24,8 +24,8 @@ import com.github.raydeth.productapp.aws.model.transform.PutUploadProductResultJ
 import java.util.Arrays;
 
 /**
- * Client for accessing Product. All service calls made using this client are blocking, and will not return until the
- * service call completes.
+ * Client for accessing Product. All com.github.raydeth.service calls made using this client are blocking, and will not return until the
+ * com.github.raydeth.service call completes.
  * <p>
  * 
  */
@@ -39,10 +39,10 @@ class ProductClient implements Product {
                     .withBaseServiceExceptionClass(ProductException.class));
 
     /**
-     * Constructs a new client to invoke service methods on Product using the specified parameters.
+     * Constructs a new client to invoke com.github.raydeth.service methods on Product using the specified parameters.
      *
      * <p>
-     * All service calls made using this new client object are blocking, and will not return until the service call
+     * All com.github.raydeth.service calls made using this new client object are blocking, and will not return until the com.github.raydeth.service call
      * completes.
      *
      * @param clientParams
@@ -54,7 +54,7 @@ class ProductClient implements Product {
 
     /**
      * @param postUploadProductRequest
-     * @return Result of the PostUploadProduct operation returned by the service.
+     * @return Result of the PostUploadProduct operation returned by the com.github.raydeth.service.
      * @sample Product.PostUploadProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/uwe8mvlvh3-2022-03-15T16:45:01Z/PostUploadProduct"
      *      target="_top">AWS API Documentation</a>
@@ -73,7 +73,7 @@ class ProductClient implements Product {
 
     /**
      * @param putUploadProductRequest
-     * @return Result of the PutUploadProduct operation returned by the service.
+     * @return Result of the PutUploadProduct operation returned by the com.github.raydeth.service.
      * @sample Product.PutUploadProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/uwe8mvlvh3-2022-03-15T16:45:01Z/PutUploadProduct"
      *      target="_top">AWS API Documentation</a>

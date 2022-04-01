@@ -16,7 +16,7 @@ public interface Product {
 
     /**
      * @param postUploadProductRequest
-     * @return Result of the PostUploadProduct operation returned by the service.
+     * @return Result of the PostUploadProduct operation returned by the com.github.raydeth.service.
      * @sample Product.PostUploadProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/uwe8mvlvh3-2022-03-15T16:45:01Z/PostUploadProduct"
      *      target="_top">AWS API Documentation</a>
@@ -25,7 +25,7 @@ public interface Product {
 
     /**
      * @param putUploadProductRequest
-     * @return Result of the PutUploadProduct operation returned by the service.
+     * @return Result of the PutUploadProduct operation returned by the com.github.raydeth.service.
      * @sample Product.PutUploadProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/uwe8mvlvh3-2022-03-15T16:45:01Z/PutUploadProduct"
      *      target="_top">AWS API Documentation</a>

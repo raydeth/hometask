@@ -9,7 +9,7 @@ import com.amazonaws.opensdk.internal.BaseException;
 
 
 /**
- * Base exception for all service exceptions thrown by upload-product-API
+ * Base exception for all com.github.raydeth.service exceptions thrown by upload-product-API
  */
 public class ProductException extends com.amazonaws.SdkBaseException implements BaseException {
 
